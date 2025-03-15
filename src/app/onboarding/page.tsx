@@ -22,7 +22,7 @@ const OnboardingPage = () => {
 
     const params = useSearchParams();
 
-    const initialStep = Number(params.get("step")) || 1;
+    const initialStep = Number(params?.get("step") ?? 1);
 
     const [activeStep, setActiveStep] = useState<number>(initialStep);
 
