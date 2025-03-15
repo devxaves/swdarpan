@@ -43,13 +43,8 @@ const DashboardPage = async () => {
             <div className="flex flex-col gap-8 md:col-span-1 xl:col-span-4 w-full">
                 <div className="flex flex-col justify-center items-center bg-white dark:bg-gray-800 shadow-xl hover:shadow-2xl py-8 md:py-10 rounded-3xl w-full transition-all duration-300 hover:scale-105">
                     <div className="relative mx-auto w-28 h-28">
-                        <Image
-                            src={dbUser?.image!}
-                            alt={dbUser?.firstName!}
-                            layout="fill"
-                            objectFit="cover"
-                            className="border-4 border-indigo-500 shadow-lg rounded-full"
-                        />
+                    <Image src={dbUser?.imageUrl!} alt={dbUser?.firstName!} layout="fill" objectFit="cover" />
+
                     </div>
                     <h4 className="bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600 mt-6 font-bold text-2xl text-transparent">
                         {dbUser?.firstName} {dbUser?.lastName}
@@ -142,11 +137,11 @@ const DashboardPage = async () => {
                         Health Recommendations
                     </h3>
                     <div className="mt-4 scrollbar-thumb-indigo-500 pr-4 w-full max-h-[calc(100vh-20rem)] overflow-y-auto scrollbar-thin scrollbar-track-gray-200">
-                    <Recommendations
+                    {/* <Recommendations
                             symptoms={symptoms}
                             medications={medications}
                             user={dbUser!}
-                        />
+                        /> */}
                     </div>
                 </div>
             </div>
