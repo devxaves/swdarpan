@@ -302,7 +302,7 @@ export default function Pricing() {
           </section>
         </div>
       </motion.section>
-      <PricingComparisonTable />
+      {/* <PricingComparisonTable /> */}
       <RetroGri/>
     </>
   );
