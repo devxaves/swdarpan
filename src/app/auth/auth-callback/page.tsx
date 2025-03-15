@@ -4,10 +4,9 @@ import { redirect } from "next/navigation";
 import React from 'react'
 
 const AuthCallbackPage = async () => {
-
     const user = await currentUser();
 
-    if (!user?.id || !user?.primaryEmailAddress?.emailAddress) {
+    if (!user?.id || !user.emailAddresses?.[0]?.emailAddress) {
         return redirect("/signin");
     }
 
@@ -22,7 +21,7 @@ const AuthCallbackPage = async () => {
             data: {
                 id: user.id,
                 clerkId: user.id,
-                email: user.primaryEmailAddress.emailAddress,
+                email: user.emailAddresses?.[0]?.emailAddress || "",
                 firstName: user.firstName!,
                 lastName: user.lastName || "",
                 image: user.imageUrl,
@@ -35,4 +34,4 @@ const AuthCallbackPage = async () => {
     redirect("/dashboard");
 };
 
-export default AuthCallbackPage
+export default AuthCallbackPage;
