@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 
-export default function middleware(req: Request) {
+
+export default function middleware(req: NextRequest) {
     const url = req.nextUrl.clone();
 
     // If the user tries to access the sign-in page, redirect them to the dashboard
